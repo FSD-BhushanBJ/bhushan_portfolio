@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input & Output</title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-container {
+            background-color: aqua;
+        }
+
+        .header {
+            height: 50px;
+            background-color: beige;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+
+        }
+
+        /**/
+        .submit {
+            height: 10%;
+            text-align: center;
+
+        }
+
+        /*All input button CSS*/
+        input[type="button"]:hover {
+            background: linear-gradient(to left, #007acc, #d7afaf);
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        input[type="button"] {
+            height: 50px;
+            width: 100%;
+            background: linear-gradient(to right, #007acc, #4e8de3);
+            border-color: transparent;
+            color: white;
+            border-radius: px;
+        }
+
+        input[value="JavaScript"],
+        input[value="Java"],
+        input[value="C"],
+        input[value="Python"] {
+            font-size: 25px;
+        }
+
+        /*Python code css*/
+        .python {
+            height: 80px;
+            border-style: solid;
+            border-width: 3px;
+            border-color: black;
+            display: grid;
+            grid-template-columns: repeat(3, 2fr);
+            text-align: center;
+            padding-left: 550px;
+        }
+
+        .inputp {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            height: 600px;
+            column-gap: 10px;
+            background-color: #306998;
+            / Python blue / color white;
+        }
+
+        /*code container css*/
+        .code-box {
+            background: #1e1e1e;
+            color: #00ffcc;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            font-family: monospace;
+
+        }
+
+        .code-box-java {
+            background: #1e1e1e;
+            color: #00ffcc;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            font-family: monospace;
+            height: 600px;
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <!--header-->
+        <div class="header">
+            <span class="submit">
+                <!--pyhton button-->
+                <input type="button" value="Python"
+                    onclick="document.getElementById('python').scrollIntoView({bahavior:'smooth'});"></span>
+            <span class="submit">
+                <!--C button-->
+                <input type="button" value="C"
+                    onclick="document.getElementById('c').scrollIntoView({bahavior:'smooth'});"></span>
+            <span class="submit">
+                <!--Java button-->
+                <input type="button" value="Java"
+                    onclick="document.getElementById('java').scrollIntoView({bahavior:'smooth'});"></span>
+            <span class="submit">
+                <!--Javascript button-->
+                <input type="button" value="JavaScript"
+                    onclick="document.getElementById('javascript').scrollIntoView({bahavior:'smooth'});"></span>
+        </div>
+        <!--Python-->
+        <div style="display: flex; justify-content: center; align-items: center; background-color: #306998; / Python blue /
+ white ">
+            <h2 id='python'>🐍 Python Programming</h2>
+        </div>
+        <div class="inputp">
+            <div class="code-box">
+                <!--python input-->
+                <h2>
+                    <p><strong>Input:</strong> 🐍 <span style="color: #FFD43B;">Python code goes here...</span></p>
+                </h2>
+                <br>
+                <h3>
+                    <pre><code>
+# Basic Input/Output in Python
+name = input("Enter your name: ")
+age = int(input("Enter your age: "))
+print(f"Hello, {name}!")
+print(f"You are {age} years old.")
+# Direct Assign
+name = "Bhushan Jatgade"
+age = 26
+print(f"Hello, {name}!")
+print(f"You are {age} years old.")
+</code></pre>
+                </h3>
+            </div>
+            <div class="code-box">
+                <!--python output-->
+                <h2>
+                    <p><strong>Output:</strong> 🐍 <span style="color: #FFD43B;">Executed successfully!</span></p>
+                </h2>
+                <br>
+                <h3>
+                    <pre><code>
+Enter your name: Bhushan Jatgade
+Enter your age: 26
+Hello, Bhushan Jatgade!
+You are 26 years old.
+</code></pre>
+                </h3>
+            </div>
+        </div>
+        <!-- c program -->
+        <div style="display: flex; justify-content: center; align-items: center; background-color: #306998; / Python blue /
+color: white; ">
+            <h2 id='c'>🟩 C 🅻 💻 C Language</h2>
+        </div>
+
+        <div class="inputp">
+            <div class="code-box">
+                <!-- c input -->
+                <h2>
+                    <p><strong>Input:</strong> 🟩 C Code Example</p>
+                </h2>
+                <br>
+                <h3>
+                    <pre><code>
+#include <stdio.h>
+int main(){
+char a[18] = "It's Bhushan here";
+printf("%s \n", a);
+char string1[20] = "hello world";
+char string2[20] = "it's BJ";
+printf("%s %s", string1, string2);
+}
+</code></pre>
+                </h3>
+            </div>
+            <div class="code-box">
+                <!-- c output -->
+                <h2>
+                    <p><strong>Output:</strong> ✔️ C Program Executed</p>
+                </h2>
+                <br>
+                <h3>
+                    <pre><code>
+It's Bhushan here
+hello world
+it's BJ
+</code></pre>
+                </h3>
+            </div>
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center; background-color: #306998; / Python blue /
+color: white; ">
+            <!-- JAVA PROGRAM -->
+            <h2 id='java'>☕ J 🅰️ V 🅰️</h2>
+        </div>
+        <div class="inputp">
+            <div class="code-box">
+                <!-- java input -->
+                <h2>
+                    <p><strong>Input:</strong> ☕🔠 ➡️ 💻
+                    </p>
+                </h2>
+                <br>
+                <h3>
+                    <pre><code>
+
+import java.util.Scanner;
+public class BasicIO {
+public static void main(String[] args) {
+Scanner input = new Scanner(System.in);
+System.out.print("Name: ");
+String name = input.nextLine();
+System.out.print("Age: ");
+int age = input.nextInt();
+System.out.println("Hi " + name + ", you are " + age + " years old.");
+input.close();
+}
+}
+// Direct Assign
+public class BasicIO {
+public static void main(String[] args) {
+String name = "Bhushan Jatgade";
+int age = 26;
+System.out.println("Hi " + name + ", you are " + age + " years old.");
+}
+} </code></pre>
+                </h3>
+            </div>
+            <div class="code-box">
+                <!-- java output -->
+                <h2>
+                    <p><strong>Output:</strong> 💻 ➡️ ☕💡</p>
+                </h2>
+                <br>
+                <h3>
+                    <pre><code>
+Enter your name: Bhushan Jatgade
+Enter your age: 26
+Hi Bhushan Jatgade, you are 26 years old.
+</code></pre>
+                </h3>
+            </div>
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center; background-color: #306998; / Python blue /
+color: white; ">
+            <!-- JAVASCRIPT PROGRAM -->
+            <h2 id='javascript'>💻 J 🅂
+                JavaScript</h2>
+        </div>
+        <div class="javastyle">
+            <div class="code-box-java">
+                <!-- javascript input -->
+                <h2>
+                    <p><strong>JavaScript Input :➡️ 🖥️</strong>
+                    </p>
+                </h2>
+                <br>
+                <!-- javascript output on ui,console,alert -->
+                <h3>
+                    <h2>Get Input Example on UI, Alert, Console.</h2>
+
+                    <input type="text" id="userInput" placeholder="Enter something" style="height: 30px;">
+                    <button onclick="handleInput()" style="height: 30px;">Submit</button>
+                    <p id="outputText"></p>
+                    <script>
+                        function handleInput() {
+                            let input = document.getElementById("userInput").value;
+                            let additionalInput = prompt("Add more to your input:", input);
+
+                            let finalInput = additionalInput;
+
+                            console.log("Input:", finalInput);
+
+                            document.getElementById("outputText").innerText = "You entered: " + finalInput;
+
+                            alert("You entered: " + finalInput);
+                        }
+                    </script>
+            </div>
+            <!-- end -->
+        </div>
+</body>
+
+</html>

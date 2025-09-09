@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Grid</title>
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-color: gray;
+           
+        }
+        .main-container{
+            width: 100%;
+            height: auto;
+            display: grid;
+            background-color: gray;
+            /*grid-template-columns: 5 1fr*/
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            column-gap: 20px;
+            row-gap: 20px;
+            padding-bottom: 20px;
+        }
+        .header{
+            width: 100%;
+            height: 90px;
+            background-color: whitesmoke;
+            text-align: center;
+            color: black;
+            padding-top: 30px;
+            font-size: 50px;
+            border-radius: 10px;
+        }
+        .box-one{
+            width: 100%;
+            height: 450px;
+            background-color: whitesmoke;
+            text-align: center;
+           
+            justify-content: center;
+            align-items:  center;
+            border-radius: 10px;
+           
+        }
+        .box-two{
+            width: 100%;
+            height: 450px;
+            background-color: whitesmoke;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .box-three{
+            width: 100%;
+            height: 450px;
+            background-color: whitesmoke;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .box-four{
+            width: 100%;
+            height: 450px;
+            background-color: whitesmoke;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .box-five{
+            width: 100%;
+            height: 450px;
+            background-color: whitesmoke;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .box-six{
+            width: 100%;
+            height: 450px;
+            background-color: whitesmoke;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .box-seven{
+            width: 100%;
+            height: 450px;
+            background-color: whitesmoke;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .box-eight{
+            width: 100%;
+            height: 450px;
+            background-color: whitesmoke;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .box-nine{
+            width: 100%;
+            height: 450px;
+            background-color: whitesmoke;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .box-ten{
+            width: 100%;
+            height: 450px;
+            background-color: whitesmoke;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        img{
+            width: 200px;
+            height: 200px;
+            justify-content: center;
+            align-items:  center;
+            padding: 30px;
+            border-radius: px;
+           
+        }
+    </style>
+</head>
+<body>
+    <!--header-->
+    <div class="header">Product Grid</div>
+    <br>
+    
+    <div class="main-container">
+        <!--box-one-->
+        <div class="box-one"><img src="https://grammrary.com/wp-content/uploads/2024/09/PSU.png" width="200px">
+            <br>
+            <p><h3><b>₹2500</b></h3></p>
+            <p><h3><b>Power Supply Unit </b></h3></p>
+        <p>A PSU converts electrical power from an outlet into a usable form for your computer components.</p></div>
+        <!--box-two-->
+        <div class="box-two"><img src="https://grammrary.com/wp-content/uploads/2024/09/GPU.png" width="200px"><br>
+            <p><h3><b>₹15000</b></h3></p>
+            <p><h3><b>Graphics Processing Unit (GPU)</b></h3></p>
+        <p>A GPU accelerates graphics rendering and is essential for gaming and video editing.</p></div>
+        <!--box-three-->
+        <div class="box-three"><img src="https://grammrary.com/wp-content/uploads/2024/09/HDD.png" width="200px"><br>
+            <p><h3><b>₹4000</b></h3></p>
+            <p><h3><b>Hard Disk Drive (HDD)</b></h3></p>
+        <p>An HDD is a traditional storage device that uses magnetic platters to store data.</p></div>
+        <!--box-four-->
+        <div class="box-four"><img src="https://grammrary.com/wp-content/uploads/2024/09/SSD.png" width="200px"><br>
+            <p><h3><b>₹6000</b></h3></p>
+            <p><h3><b>Solid State Drive (SSD) </b></h3></p>
+        <p>An SSD is a fast storage device that uses flash memory for quicker data access.</p></div>
+        <!--box-five-->
+        <div class="box-five"><img src="https://grammrary.com/wp-content/uploads/2024/09/Cooling-Fan.png" width="200px"><br>
+            <p><h3><b>₹800</b></h3></p>
+            <p><h3><b>Cooling Fan </b></h3></p>
+        <p>A cooling fan helps maintain optimal temperatures by dissipating heat from the system.</p></div>
+        <!--box-six-->
+        <div class="box-six"><img src="https://grammrary.com/wp-content/uploads/2024/09/Heat-Sink.png" width="200px"><br>
+            <p><h3><b>₹1200</b></h3></p>
+            <p><h3><b>Heat Sink </b></h3></p>
+        <p>A heat sink absorbs and disperses heat from electronic components to prevent overheating</p></div>
+        <!--box-seven-->
+        <div class="box-seven"><img src="https://grammrary.com/wp-content/uploads/2024/09/Ethernet-Card.png" width="200px"><br>
+            <p><h3><b>₹700</b></h3></p>
+            <p><h3><b>Ethernet Card </b></h3></p>
+        <p>An Ethernet card enables wired network connectivity for faster and stable internet connections.</p></div>
+        <!--box-eight-->
+        <div class="box-eight"><img src="https://grammrary.com/wp-content/uploads/2024/09/Sound-Card.png" width="200px"><br>
+            <p><h3><b>₹1500</b></h3></p>
+            <p><h3><b>Sound Card</b></h3></p>
+        <p>A sound card enhances audio quality and is essential for music production and gaming.</p></div>
+        <!--box-nine-->
+        <div class="box-nine"><img src="https://grammrary.com/wp-content/uploads/2024/09/Network-Interface-Card-NIC.png" width="200px"><br>
+            <p><h3><b>₹1000</b></h3></p>
+            <p><h3><b>Network Interface Card (NIC)</b></h3></p>
+        <p>A NIC is a hardware component that connects a computer to a network.</p></div>
+        <!--box-ten-->
+        <div class="box-ten"><img src="https://grammrary.com/wp-content/uploads/2024/09/Motherboard.png" width="200px"><br>
+            <p><h3><b>₹9000</b></h3></p>
+            <p><h3><b>Motherboard</b></h3></p>
+        <p>The main circuit board serves as the system’s basis, connecting and facilitating communication amongst all computer components.</p></div>
+    </div>
+</body>
+</html>
