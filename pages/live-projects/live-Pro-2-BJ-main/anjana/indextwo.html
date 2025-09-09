@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anjana Automobile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .navbar,
+      .footer {
+        background-color: #000;
+      }
+
+      .navbar-brand,
+      .nav-link,
+      .footer p,
+      .footer a {
+        color: #fff !important;
+      }
+
+      .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/bike-bgm.webp') no-repeat center center;
+        background-size: cover;
+        background-blend-mode: darken;
+        color: white;
+        text-shadow: 1px 1px 5px black;
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .btn-red {
+        background-color: red;
+        color: white;
+      }
+
+      .services .card {
+        border: none;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .footer {
+        padding: 20px 0;
+        text-align: center;
+      }
+
+      .social-icons a {
+        margin: 0 10px;
+        color: red;
+        font-size: 20px;
+      }
+
+      .form-select-sm {
+        width: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="#">Anjana Automobile</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon bg-light"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item"><a class="nav-link" href="#"><span data-key="home">Home</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#services"><span data-key="services">Services</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#about"><span data-key="aboutUs">About Us</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact"><span data-key="contact">Contact</span></a></li>
+            <li class="nav-item">
+              <select id="langSelect" class="form-select form-select-sm ms-3">
+                <option value="en">English</option>
+                <option value="mr">मराठी</option>
+                <option value="hi">हिन्दी</option>
+              </select>
+            </li>
+            <li class="nav-item">
+              <a href="tel:1234567890" class="btn btn-sm btn-red ms-3"><span data-key="callNow">Call Now</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero text-center">
+      <h1 class="display-4 fw-bold"><span data-key="heroTitle">Fast & Reliable Bike Servicing</span></h1>
+      <p class="lead"><span data-key="heroSub">Your Trusted Partner in Bike Care</span></p>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services py-5 bg-light">
+      <div class="container text-center">
+        <h2 class="mb-4"><span data-key="ourServices">Our Services</span></h2>
+        <div class="row">
+          <div class="col-md-3 mb-4">
+            <div class="card">
+              <img src="./assets/engine-repair.webp" class="card-img-top" alt="Engine Repair" />
+              <div class="card-body">
+                <h5 class="card-title"><span data-key="engineRepair">Engine Repair</span></h5>
+                <p class="card-text"><span data-key="engineText">Expert engine diagnostics and repair service.</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-4">
+            <div class="card">
+              <img src="./assets/engine-oil.jpg" class="card-img-top" alt="Oil Change" />
+              <div class="card-body">
+                <h5 class="card-title"><span data-key="oilChange">Oil Change</span></h5>
+                <p class="card-text"><span data-key="oilText">Quality oil change to keep your engine smooth.</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-4">
+            <div class="card">
+              <img src="./assets/servicing.webp" class="card-img-top" alt="Full Servicing" />
+              <div class="card-body">
+                <h5 class="card-title"><span data-key="fullServicing">Full Servicing</span></h5>
+                <p class="card-text"><span data-key="fullText">Complete check-up and tune-up service.</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-4">
+            <div class="card">
+              <img src="./assets/washingtwo.jpg" class="card-img-top" alt="Bike Washing" />
+              <div class="card-body">
+                <h5 class="card-title"><span data-key="bikeWashing">Bike Washing</span></h5>
+                <p class="card-text"><span data-key="washText">Premium wash for a showroom shine.</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about" class="py-5">
+      <div class="container text-center">
+        <h2 class="mb-4"><span data-key="aboutUsHeading">About Anjana Automobile</span></h2>
+        <p><span data-key="aboutDesc">We provide top-quality bike repair and maintenance services with skilled mechanics who care about your safety and satisfaction.</span></p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-4"><span data-key="contactUs">Contact Us</span></h2>
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <form>
+              <div class="mb-3">
+                <label class="form-label"><span data-key="nameLabel">Name</span></label>
+                <input type="text" class="form-control" placeholder="Your Name" />
+              </div>
+              <div class="mb-3">
+                <label class="form-label"><span data-key="emailLabel">Email</span></label>
+                <input type="email" class="form-control" placeholder="Your Email" />
+              </div>
+              <div class="mb-3">
+                <label class="form-label"><span data-key="phoneLabel">Phone Number</span></label>
+                <input type="tel" class="form-control" placeholder="Your Phone Number" />
+              </div>
+              <div class="mb-3">
+                <label class="form-label"><span data-key="messageLabel">Message</span></label>
+                <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
+              </div>
+              <button class="btn btn-red" type="submit"><span data-key="sendMsg">Send Message</span></button>
+            </form>
+          </div>
+          <div class="col-md-6">
+               <iframe src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d390.794563681492!2d78.58492099543972!3d21.276003228026262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d21.276260164925382!2d78.58465710664213!5e0!3m2!1sen!2sin!4v1752420588741!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 Anjana Automobile | Katol, Nagpur | Phone: 9637705246</p>
+        <div class="social-icons">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Language Switch JS -->
+    <script>
+      const translations = {
+        en: {
+          home: "Home",
+          services: "Services",
+          aboutUs: "About Us",
+          contact: "Contact",
+          callNow: "Call Now",
+          heroTitle: "Fast & Reliable Bike Servicing",
+          heroSub: "Your Trusted Partner in Bike Care",
+          ourServices: "Our Services",
+          engineRepair: "Engine Repair",
+          engineText: "Expert engine diagnostics and repair service.",
+          oilChange: "Oil Change",
+          oilText: "Quality oil change to keep your engine smooth.",
+          fullServicing: "Full Servicing",
+          fullText: "Complete check-up and tune-up service.",
+          bikeWashing: "Bike Washing",
+          washText: "Premium wash for a showroom shine.",
+          aboutUsHeading: "About Anjana Automobile",
+          aboutDesc: "We provide top-quality bike repair and maintenance services with skilled mechanics who care about your safety and satisfaction.",
+          contactUs: "Contact Us",
+          nameLabel: "Name",
+          emailLabel: "Email",
+          phoneLabel: "Phone Number",
+          messageLabel: "Message",
+          sendMsg: "Send Message"
+        },
+        mr: {
+          home: "मुखपृष्ठ",
+          services: "सेवा",
+          aboutUs: "आमच्याबद्दल",
+          contact: "संपर्क",
+          callNow: "आता कॉल करा",
+          heroTitle: "जलद आणि विश्वासार्ह बाईक सेवा",
+          heroSub: "आपले विश्वसनीय बाईक पार्टनर",
+          ourServices: "आमच्या सेवा",
+          engineRepair: "इंजिन दुरुस्ती",
+          engineText: "तज्ज्ञ इंजिन तपासणी आणि दुरुस्ती सेवा.",
+          oilChange: "तेल बदल",
+          oilText: "तुमच्या इंजिनसाठी दर्जेदार तेल बदल.",
+          fullServicing: "पूर्ण सर्व्हिसिंग",
+          fullText: "संपूर्ण तपासणी आणि ट्यून-अप सेवा.",
+          bikeWashing: "बाईक वॉशिंग",
+          washText: "शो-रूम सारखी चमक देणारी वॉश सेवा.",
+          aboutUsHeading: "अंजना ऑटोमोबाईल बद्दल",
+          aboutDesc: "आम्ही उच्च दर्जाच्या बाईक देखभालीच्या सेवा पुरवतो, अनुभवी मेकॅनिक्ससह जे तुमच्या सुरक्षिततेची काळजी घेतात.",
+          contactUs: "संपर्क साधा",
+          nameLabel: "नाव",
+          emailLabel: "ईमेल",
+          phoneLabel: "फोन नंबर",
+          messageLabel: "संदेश",
+          sendMsg: "संदेश पाठवा"
+        },
+        hi: {
+          home: "होम",
+          services: "सेवाएं",
+          aboutUs: "हमारे बारे में",
+          contact: "संपर्क करें",
+          callNow: "अभी कॉल करें",
+          heroTitle: "तेज़ और भरोसेमंद बाइक सर्विस",
+          heroSub: "आपका भरोसेमंद बाइक साथी",
+          ourServices: "हमारी सेवाएं",
+          engineRepair: "इंजन रिपेयर",
+          engineText: "विशेषज्ञ इंजिन जांच और मरम्मत सेवा।",
+          oilChange: "तेल बदलें",
+          oilText: "बेहतर परफॉर्मेंस के लिए क्वालिटी इंजन ऑयल।",
+          fullServicing: "पूर्ण सर्विसिंग",
+          fullText: "कंप्लीट बाइक चेकअप और ट्यून-अप।",
+          bikeWashing: "बाइक वॉशिंग",
+          washText: "शोरूम जैसी चमक के लिए प्रीमियम वॉश।",
+          aboutUsHeading: "अंजना ऑटोमोबाइल के बारे में",
+          aboutDesc: "हम अनुभवी मैकेनिकों के साथ उच्च गुणवत्ता वाली बाइक सेवा प्रदान करते हैं जो आपकी सुरक्षा का ख्याल रखते हैं।",
+          contactUs: "संपर्क करें",
+          nameLabel: "नाम",
+          emailLabel: "ईमेल",
+          phoneLabel: "फोन नंबर",
+          messageLabel: "संदेश",
+          sendMsg: "संदेश भेजें"
+        }
+      };
+
+      const select = document.getElementById("langSelect");
+      select.addEventListener("change", function () {
+        const lang = this.value;
+        document.querySelectorAll("[data-key]").forEach((el) => {
+          const key = el.getAttribute("data-key");
+          if (translations[lang][key]) {
+            el.textContent = translations[lang][key];
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
