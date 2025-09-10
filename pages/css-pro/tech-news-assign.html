@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top Tech News</title>
+    <style>
+      body {
+        width: 100vw;
+        height: 100vh;
+        background-color: lightgray;
+        padding: 0;
+        margin: 0;
+      }
+      .main-container {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        background-color: lightgray;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 40px;
+        row-gap: 20px;
+      }
+      .box-one {
+        width: 100%;
+        height: 100px;
+        background-color: rgb(56, 229, 56);
+        text-align: center;
+        color: white;
+        grid-column: 1 / span 5;
+        
+      }
+      .box-two {
+        width: 100%;
+        height: 600px;
+        background-color: lightyellow;
+        grid-column: 1 / span 3;
+        text-align: justify;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 10px;
+        font-size: 20px;
+      }
+      .box-three {
+        width: 100%;
+        height: 600px;
+        background-color: lightyellow;
+        grid-column: 4 / span 2;
+        border-radius: 10px;
+        text-align: justify;
+        padding-right: 10px;
+        padding-left: 10px;
+        
+      }
+      .box-four {
+        width: 100%;
+        height: 40px;
+        background-color: black;
+        color: white;
+        grid-column: 1 / span 5;
+        text-align: center;
+        padding: 30px;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <!--box one-->
+      <div class="box-one"><h1>Top Tech News</h1></div>
+      <!--box two-->
+      <div class="box-two">
+        <p><h2>Today's Top Tech News (Short Summary)</h2></p>
+        <p>
+          Nvidia's U.S. Investment – Nvidia plans to invest hundreds of billions
+          in U.S. chip manufacturing to reduce reliance on Asia.
+        </p>
+        <p>
+          Huawei's Strength – Nvidia CEO calls Huawei China’s most formidable
+          tech company, despite U.S. sanctions.
+        </p>
+        <p>
+          Big Tech vs. Australia – Meta, Google, Apple, and X challenge
+          Australia’s media and AI laws, calling them unfair trade restrictions
+        </p>
+        <p>
+          AI & Copyright Battle – UK luxury brands oppose new AI copyright laws,
+          fearing harm to creative industries.
+        </p>
+        <p>
+          Nvidia Opens Quantum Lab – Nvidia launches a quantum computing
+          research lab in Boston, collaborating with Harvard & MIT.
+        </p>
+        <p>
+          Instagram Outage – Meta's Instagram faced a major outage in the U.S.,
+          but services are now restored.
+        </p>
+        <p>
+          Perplexity AI Expanding – AI startup Perplexity AI seeks funding to
+          grow its AI capabilities and global reach
+        </p>
+        <p>
+          Quantum Computing Surprise – Nvidia CEO questions public quantum
+          firms, highlighting the industry's early stage
+        </p>
+        <p>
+          Google's $23B Deal – Google is close to acquiring cybersecurity firm
+          Wiz to strengthen its cloud security services.
+        </p>
+      </div>
+      <!--box three-->
+      <div class="box-three">
+        <h2>Related News</h2>
+        <ul>
+          <li>Nvidia's U.S. Manufacturing.</li>
+          <li>Huawei's Rise.</li>
+          <li>Tech vs. Australia.</li>
+          <li>Latest Tech News (Reuters).</li>
+          <li>Technology Updates (Bloomberg).</li>
+        </ul>
+      </div>
+      <!--box four-->
+      <div class="box-four">&copy 2025 News Company. All Rights Reserved.</div>
+    </div>
+  </body>
+</html>

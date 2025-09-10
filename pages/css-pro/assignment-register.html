@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="icon" href="https://t4.ftcdn.net/jpg/07/31/65/81/360_F_731658136_4fiY71aMa78vlb1KgrJwnf5xdOGKWgws.jpg" style="border-radius: 50%;">
+    <style>
+/*universal selectors css*/
+*{
+    font-family: 'Rajdhani', sans-serif;
+
+}
+/*body css*/
+body{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to right, #00bcd4, #03a9f4);
+    margin: 0;
+    padding: 0;
+    padding-top: 20px;
+}
+/*main container css*/
+.main-container{
+    height: 90%;
+    width: 80%;
+    border-style: solid;
+    border-width: 3px;
+    border-color: transparent;
+    margin-left: 100px;
+    text-align: left;
+    border-radius: 5px;
+    background-color: aliceblue;
+    padding-block: 5px;
+    padding-inline: 50px;
+    
+
+}
+/*header css*/
+.heading{
+    height: 10%;
+    width: 100%;
+    background-color: li;
+    display: grid;
+    text-align: left;
+    padding-bottom: 20px;
+}
+hr{
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, #00bcd4, #03a9f4);
+    margin-left:1px;
+    margin-top: -0%;
+}
+/*section css*/
+.section{
+    height: 50%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: minmax(2,1fr);
+    padding-top: 20px;
+    padding-left: 16px
+}
+.sec-one{
+    
+    
+}
+/*attribute css*/
+label{
+    font-size: 25px;
+}
+input[type="text"],input[type="number"],input[type="password"]{
+    width: 550px;
+    height: 50px;
+    border-radius: 5px;
+    border-color: transparent;
+    border-width: 2px;
+}
+input[placeholder="Enter Your Name"],
+input[placeholder="Enter Your Email"],
+input[placeholder="Enter Your Username"],
+input[placeholder="Enter Your Password"],
+input[placeholder="Enter Your Number"],
+input[placeholder="Confirm Your Password"]{
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.sec-two{
+    
+    
+}
+h2{
+    height: 10px;
+}
+/*gender sec css*/
+.gender{
+    
+    height: 11%;
+    text-align:left;
+    align-items: center;
+    font-size: 20px;
+    display: grid; 
+    grid-template-columns: repeat(3,auto);   
+    gap:25px;    
+}
+input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #03a9f4; /* Changes the color */
+  }
+/*button css*/   
+.submit{
+   
+    height: 10%;
+    
+    text-align: center;
+    
+    
+}
+input[type="button"]:hover{
+    background: radial-gradient(circle, #0f3460, #121212);
+    color: white;
+}
+input[type="button"]{
+    height: 50px;
+    width: 100%;
+    background: linear-gradient(to right, #00bcd4, #03a9f4);
+    border-color: transparent;
+    color:white;
+    border-radius: 5px;
+}
+input[value="Register"]{
+    font-size: 25px;
+}
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <!-- heading -->
+        <div class="heading">
+            <h1>Registration<hr></h1>
+            
+            <br>
+        </div>
+        <!-- sections -->
+       <div class="section">
+        <!-- section one -->
+        <div class="sec-one">
+            <form>
+                <label>Full Name</label>
+                <br>
+                <input type="text" placeholder="Enter Your Name">
+                <br>
+                <br>
+                <label>Email</label>
+                <br>
+                <input type="text" placeholder="Enter Your Email">
+                <br>
+                <br>
+                <label>Password</label>
+                <br>
+                <input type="password" placeholder="Enter Your Password">
+                <br>
+                <br>
+            </form>
+        </div>
+        <!-- section two -->
+        <div class="sec-two">
+            <form>
+                <label>Username</label>
+                <br>
+                <input type="text" placeholder="Enter Your Username">
+                <br>
+                <br>
+                <label>Phone Number</label>
+                <br>
+                <input type="number" placeholder="Enter Your Number">
+                <br>
+                <br>
+                <label>Confirm Password</label>
+                <br>
+                <input type="password" placeholder="Confirm Your Password">
+                <br>
+                <br>
+            </form>
+        </div>
+       </div>
+       <!-- gender section -->
+        <div>
+            <h2>Gender</h2>
+        </div>
+        <div class="gender">
+            <label><input type="radio" name="gender" value="Male">Male</label>
+            <label><input type="radio" name="gender" value="Female">Female</label>
+            <label><input type="radio" name="gender" value="Prefer Not To Say">Prefer Not To Say</label>
+        </div>
+        <!-- submit button css -->
+        <div class="submit">
+            <input type="button" value="Register">
+        </div>
+    </div>
+    
+</body>
+</html>
