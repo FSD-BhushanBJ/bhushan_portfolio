@@ -196,6 +196,7 @@
 
         .btn.secondary:hover {
             background: var(--neon-magenta);
+            color: var(--bg-primary);
             box-shadow: 0 0 20px var(--neon-magenta);
         }
 
@@ -837,7 +838,7 @@
         .social-link {
             width: 40px;
             height: 40px;
-            background: rgba(58, 166, 255, 0.1);
+            background: rgba(0, 153, 255, 0.1);
             border: 2px solid var(--neon-blue);
             border-radius: 50%;
             display: flex;
