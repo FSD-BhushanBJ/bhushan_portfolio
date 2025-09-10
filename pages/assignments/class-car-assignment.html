@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Class Car</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        header {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .container {
+            display: flex;
+            margin-top: 20px;
+        }
+        .section {
+            flex: 1;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            margin: 0 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            margin-top: 0;
+        }
+        .string-list {
+            list-style: none;
+            padding: 0;
+        }
+        .string-list li {
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #e0e0e0;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .string-list li:hover {
+            background-color: #d0d0d0;
+        }
+        .display-section {
+            min-height: 200px;
+        }
+        .display-section p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Class Car</h1>
+        <!-- header -->
+    </header>
+    <!-- container -->
+    <div class="container">
+        <!-- sections -->
+        <div class="section">
+            <!-- string sections -->
+            <h2>Car Parts as a Strings</h2>
+            <ul class="string-list">
+                <li onclick="displayAttribute('bodyType')">String Body</li>
+                <li onclick="displayAttribute('carBrand')">String Brand</li>
+                <li onclick="displayAttribute('carColor')">String Color</li>
+                <li onclick="displayAttribute('engineType')">String Engine Type</li>
+                <li onclick="displayAttribute('seats')">String Seats</li>
+                <li onclick="displayAttribute('seatBelts')">String Seat Belts</li>
+                <li onclick="displayAttribute('wheels')">String Wheels</li>
+                <li onclick="displayAttribute('tyres')">String Tyres</li>
+                <li onclick="displayAttribute('transmission')">String Transmission</li>
+                <li onclick="displayAttribute('suspension')">String Suspension</li>
+                <li onclick="displayAttribute('brakes')">String Brakes</li>
+                <li onclick="displayAttribute('headLights')">String HeadLights</li>
+                <li onclick="displayAttribute('dashboard')">String Dashboard</li>
+                <li onclick="displayAttribute('airConditioner')">String Air Conditioner</li>
+                <li onclick="displayAttribute('audioSystem')">String Audio System</li>
+                <li onclick="displayAttribute('navigationSystem')">String Navigation System</li>
+                <li onclick="displayAttribute('safetySensors')">String Safety Sensors</li>
+                <li onclick="displayAttribute('cost')">Int Cost</li>
+            </ul>
+        </div>
+        <!-- section display -->
+        <div class="section display-section">
+            <h2>Display</h2>
+            <p id="displayText">Click on Strings to see its details.</p>
+        </div>
+    </div>
+
+    <script>
+        // Car object simulation
+        const car = {
+            bodyType: "Coupe",
+            carBrand: "Mercedez",
+            carColor: "Silver",
+            engineType: "V6",
+            seats: "Leather, 5 Seats",
+            seatBelts: "5, 5-Star Rating",
+            wheels: "Alloy, 4 Wheels",
+            tyres: "All-Season",
+            transmission: "Automatic",
+            suspension: "Independent",
+            brakes: "Disc",
+            headLights: "LED",
+            dashboard: "Digital",
+            airConditioner: "Automatic Climate Control",
+            audioSystem: "6 Speakers",
+            navigationSystem: "GPS",
+            safetySensors: "4 Proximity Sensors",
+            cost: "₹65,00,000"
+        };
+        // functions sections
+        function displayAttribute(attribute) {
+            const displayText = document.getElementById('displayText');
+            displayText.textContent = `${attribute.charAt(0).toUpperCase() + attribute.slice(1)}: ${car[attribute]}`;
+        }
+    </script>
+</body>
+</html>
