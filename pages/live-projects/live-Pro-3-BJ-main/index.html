@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Game</title>
+    <link rel="icon" type="image/png" href="./assets/fevicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- Page 1: Welcome Page -->
+        <div id="welcomePage" class="page active">
+            <h1>Welcome to the Coding Quiz!</h1>
+            <p>Test your knowledge about web development with this fun quiz. Customize your experience below:</p>
+
+            <label for="username">Your Name:</label>
+            <input id="username" type="text" placeholder="Enter your name" autocomplete="off" />
+
+            <p>Choose your avatar:</p>
+            <div class="avatar-selection">
+                <div class="avatar" data-avatar="👩‍💻" onclick="selectAvatar(this)">👩‍💻</div>
+                <div class="avatar" data-avatar="🦄" onclick="selectAvatar(this)">🦄</div>
+                <div class="avatar" data-avatar="👨‍💻" onclick="selectAvatar(this)">👨‍💻</div>
+                <div class="avatar" data-avatar="🐱" onclick="selectAvatar(this)">🐱</div>
+                <div class="avatar" data-avatar="🚀" onclick="selectAvatar(this)">🚀</div>
+                <div class="avatar" data-avatar="🤖" onclick="selectAvatar(this)">🤖</div>
+            </div>
+
+            <p>Select difficulty:</p>
+            <div class="difficulty-selector">
+                <div class="difficulty-option selected" data-difficulty="easy" onclick="selectDifficulty(this)">Easy
+                </div>
+                <div class="difficulty-option" data-difficulty="medium" onclick="selectDifficulty(this)">Medium</div>
+                <div class="difficulty-option" data-difficulty="hard" onclick="selectDifficulty(this)">Hard</div>
+            </div>
+
+            <button id="startButton" onclick="startQuiz()" class="pulse">Start Quiz</button>
+        </div>
+
+        <!-- Page 2: Quiz Page -->
+        <div id="quizPage" class="page">
+            <div class="user-info">
+                <div class="user-avatar" id="userAvatar">👩‍💻</div>
+                <div class="user-name" id="displayName">User</div>
+                <div class="streak-badge" id="streakBadge">🔥 3 streak</div>
+            </div>
+
+            <div class="question-counter">Question <span id="currentQuestionNum">1</span>/<span
+                    id="totalQuestions">5</span></div>
+            <div class="progress-bar">
+                <div id="progress" class="progress" style="width: 100%"></div>
+            </div>
+
+            <div class="lifelines">
+                <div class="lifeline" id="fiftyFifty" onclick="useFiftyFifty()">
+                    <span class="lifeline-icon">🎯</span> 50:50
+                </div>
+                <div class="lifeline" id="hint" onclick="useHint()">
+                    <span class="lifeline-icon">💡</span> Hint
+                </div>
+                <div class="lifeline" id="skipQuestion" onclick="useSkip()">
+                    <span class="lifeline-icon">⏭️</span> Skip
+                </div>
+            </div>
+
+            <h2 id="quizTitle">Quiz Time!</h2>
+            <div class="timer-container">
+                <span class="timer-icon">⏱️</span>
+                <div id="timer" class="timer">20 seconds</div>
+            </div>
+
+            <p id="question"></p>
+            <div id="options"></div>
+
+            <div id="feedbackMessage" class="feedback"></div>
+            <div id="hintBox" class="hint"></div>
+            <br>
+            <button id="nextButton" onclick="nextQuestion()" style="display: none;">Next Question</button>
+        </div>
+
+        <!-- Page 3: Score Page -->
+        <div id="scorePage" class="page">
+            <h1>Quiz Completed!</h1>
+            <div class="score-container">
+                <div class="score-circle" id="scoreCircle">
+                    <span class="score-text" id="scoreText">0%</span>
+                </div>
+                <h2 id="finalScore">Your Score: 0/10</h2>
+                <p id="scoreMsg">Great effort!</p>
+            </div>
+
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-value" id="correctAnswers">0</div>
+                    <div class="stat-label">Correct</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="incorrectAnswers">0</div>
+                    <div class="stat-label">Incorrect</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="timeUsed">0:00</div>
+                    <div class="stat-label">Time</div>
+                </div>
+            </div>
+            <br> 
+            <button onclick="playAgain()" class="bounce">Play Again</button>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script src="./script.js"></script>
