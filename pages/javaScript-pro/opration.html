@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Calculator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .main-container {
+            width: 350px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        input {
+            width: calc(100% - 40px);
+            margin: 10px 0;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        input:focus {
+            border-color: #74ebd5;
+        }
+        button {
+            width: calc(100% - 40px);
+            padding: 15px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(45deg, #56ab2f, #a8e063);
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+        button:hover {
+            background: linear-gradient(45deg, #a8e063, #56ab2f);
+            transform: translateY(-2px);
+        }
+        .display {
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 20px;
+            color: #555;
+            min-height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>Calculator 🧮</h1>
+        <input type="number" id="input-one" placeholder="Enter num 1">
+        <input type="number" id="input-two" placeholder="Enter num 2">
+        <button onclick="Calculate()">Calculate</button>
+
+        <div class="display" id="showSum"></div>
+        <div class="display" id="showsub"></div>
+        <div class="display" id="showmul"></div>
+        <div class="display" id="showdiv"></div>
+        <div class="display" id="showmod"></div>
+    </div>
+
+    <script>
+        function Calculate(){
+            let num1 = Number(document.getElementById("input-one").value);
+            let num2 = Number(document.getElementById("input-two").value);
+
+            document.getElementById("showSum").innerHTML = "Sum: " + (num1 + num2);
+            document.getElementById("showsub").innerHTML = "Subtraction: " + (num1 - num2);
+            document.getElementById("showmul").innerHTML = "Multiplication: " + (num1 * num2);
+            document.getElementById("showdiv").innerHTML = "Division: " + (num2 !== 0 ? (num1 / num2).toFixed(2) : "Cannot divide by 0");
+            document.getElementById("showmod").innerHTML = "Modulus: " + (num2 !== 0 ? (num1 % num2) : "Cannot mod by 0");
+        }
+    </script>
+</body>
+</html>

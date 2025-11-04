@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ATM Withdrawal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .main-container {
+            background-color: white;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            text-align: center;
+            width: 300px;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        h3 {
+            margin-bottom: 10px;
+            color: #555;
+        }
+        #showbal {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: green;
+        }
+        input {
+            width: 80%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #funds {
+            margin-top: 15px;
+            color: red;
+            min-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>ATM Withdrawal</h1>
+        <h3>Current Balance</h3>
+        <p id="showbal"></p>
+        <input type="number" placeholder="Enter amount to withdraw" id="input">
+        <button onclick="withDrawn()">Withdraw</button>
+        <p id="funds"></p>
+    </div>
+
+    <script>
+        let balance = 10000;
+        document.getElementById("showbal").innerText = "₹ " + balance;
+
+        function withDrawn(){
+            let amount = parseInt(document.getElementById("input").value);
+            let funds = document.getElementById("funds");
+
+            if(isNaN(amount) || amount <= 0){
+                funds.innerText = "Please enter a valid amount!";
+            } else if(amount % 100 !== 0){
+                funds.innerText = "Amount should be in multiples of 100!";
+            } else if(amount > balance){
+                funds.innerText = "Insufficient balance!";
+            } else {
+                balance = balance - amount;
+                document.getElementById("showbal").innerText = "₹ " + balance;
+                funds.innerText = "Withdrawal successful!";
+                funds.style.color = "green";
+            }
+        }
+    </script>
+</body>
+</html>

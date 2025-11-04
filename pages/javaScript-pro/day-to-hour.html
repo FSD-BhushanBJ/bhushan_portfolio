@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Days to Hour</title>
+    <style>
+        /* Main container styling */
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;         /* Center the container */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Generic div styling */
+div {
+  margin-bottom: 20px;
+}
+
+/* Headings */
+h1, h2, h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Paragraphs */
+p {
+  color: #555;
+  line-height: 1.6;
+}
+input{
+    height: 25px;
+    border-style: none;
+}
+/* Buttons */
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+ 
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive */
+/* @media (max-width: 768px) {
+  .main-container {
+    padding: 10px;
+  }
+} */
+
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>Days To Hours</h1>
+        <input type="number" id="input" placeholder="Enter a number">
+        <p id="display"></p>
+        <button onclick="showHours()">Click</button>
+    </div>
+    <script>
+        function showHours(){
+            let days = Number(document.getElementById("input").value)
+            let hours = days * 24
+            let displayError = ""
+
+            if(days == 0){
+                
+                alert("Error : Enter a positive Number")
+                // displayError = "Days cannot be zero";
+            }
+            else{
+                hours = days * 24;
+                alert(hours + " hours")
+            }
+
+            document.getElementById("display").innerHTML = hours + " hours"
+        }
+    </script>
+</body>
+</html>

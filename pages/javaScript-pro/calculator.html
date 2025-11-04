@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Nebula Calculator</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Orbitron', monospace;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 50%, #ff9a9e 100%);
+            transition: all 0.4s ease;
+            overflow: hidden;
+            position: relative;
+        }
+
+        body.dark {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+        }
+
+        .bg-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); opacity: 0.3; }
+            50% { transform: translateY(-20px); opacity: 0.8; }
+        }
+
+        .calculator {
+            position: relative;
+            width: 360px;
+            padding: 20px;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.85);
+            transition: all 0.3s ease;
+        }
+
+        body.dark .calculator {
+            background: rgba(40, 40, 40, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 100px;
+            height: 50px;
+            border-radius: 25px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .theme-toggle:focus {
+            outline: 2px solid #007BFF;
+        }
+
+        .display {
+            width: 100%;
+            height: 80px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 0 15px;
+            font-size: 2rem;
+            font-weight: bold;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+            color: #333;
+        }
+
+        body.dark .display {
+            background: #1e1e1e;
+            color: #fff;
+        }
+
+        .buttons-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 20px;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Orbitron', monospace;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.1s ease;
+        }
+
+        .btn:focus {
+            outline: 2px solid #007BFF;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn.number {
+            background: #f8f9fa;
+            color: #333;
+        }
+
+        body.dark .btn.number {
+            background: #333;
+            color: #fff;
+        }
+
+        .btn.operator {
+            background: #ffc107;
+            color: #fff;
+        }
+
+        body.dark .btn.operator {
+            background: #ffa500;
+        }
+
+        .btn.special {
+            background: #28a745;
+            color: #fff;
+        }
+
+        body.dark .btn.special {
+            background: #218838;
+        }
+
+        @media (max-width: 480px) {
+            .calculator {
+                width: 90%;
+                padding: 15px;
+            }
+            .display {
+                font-size: 1.5rem;
+                height: 60px;
+            }
+            .btn {
+                padding: 15px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="light" aria-label="Nebula Calculator App">
+    <div class="bg-particles" aria-hidden="true"></div>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">Change Theme 🌙</button>
+
+    <div class="calculator" role="application">
+        
+
+        <div class="display" role="status" aria-live="polite">
+            <div id="display">0</div>
+        </div>
+
+        <div class="buttons-container">
+            <button class="btn number" onclick="inputNumber('7')" aria-label="Seven">7</button>
+            <button class="btn number" onclick="inputNumber('8')" aria-label="Eight">8</button>
+            <button class="btn number" onclick="inputNumber('9')" aria-label="Nine">9</button>
+            <button class="btn operator" onclick="inputOperator('/')" aria-label="Divide">÷</button>
+
+            <button class="btn number" onclick="inputNumber('4')" aria-label="Four">4</button>
+            <button class="btn number" onclick="inputNumber('5')" aria-label="Five">5</button>
+            <button class="btn number" onclick="inputNumber('6')" aria-label="Six">6</button>
+            <button class="btn operator" onclick="inputOperator('*')" aria-label="Multiply">×</button>
+
+            <button class="btn number" onclick="inputNumber('1')" aria-label="One">1</button>
+            <button class="btn number" onclick="inputNumber('2')" aria-label="Two">2</button>
+            <button class="btn number" onclick="inputNumber('3')" aria-label="Three">3</button>
+            <button class="btn operator" onclick="inputOperator('-')" aria-label="Subtract">−</button>
+
+            <button class="btn special" onclick="clearDisplay()" aria-label="Clear">C</button>
+            <button class="btn number" onclick="inputNumber('0')" aria-label="Zero">0</button>
+            <button class="btn number" onclick="inputNumber('.')" aria-label="Decimal point">.</button>
+            <button class="btn operator" onclick="inputOperator('+')" aria-label="Add">+</button>
+
+            <button class="btn special" style="grid-column: span 4;" onclick="calculate()" aria-label="Equals">=</button>
+        </div>
+    </div>
+
+    <script>
+        // Variables to store the calculator state
+        let currentInput = '0';
+        let previousInput = '';
+        let operator = null;
+    
+        // Get the display element
+        const display = document.getElementById('display');
+    
+        // Update the calculator display
+        function updateDisplay() {
+            display.textContent = currentInput;
+        }
+    
+        // Input numbers
+        function inputNumber(num) {
+            if (currentInput === '0') {
+                currentInput = num;
+            } else {
+                currentInput += num;
+            }
+            updateDisplay();
+        }
+    
+        // Input decimal point
+        function inputDecimal() {
+            if (!currentInput.includes('.')) {
+                currentInput += '.';
+            }
+            updateDisplay();
+        }
+    
+        // Input an operator
+        function inputOperator(op) {
+            if (operator !== null) {
+                calculate();
+            }
+            operator = op;
+            previousInput = currentInput;
+            currentInput = '0';
+        }
+    
+        // Perform the calculation
+        function calculate() {
+            if (operator === null || previousInput === '') return;
+    
+            const a = parseFloat(previousInput);
+            const b = parseFloat(currentInput);
+            let result = 0;
+    
+            if (operator === '+') {
+                result = a + b;
+            } else if (operator === '-') {
+                result = a - b;
+            } else if (operator === '*') {
+                result = a * b;
+            } else if (operator === '/') {
+                if (b === 0) {
+                    result = 'Error';
+                } else {
+                    result = a / b;
+                }
+            }
+    
+            currentInput = result.toString();
+            operator = null;
+            previousInput = '';
+            updateDisplay();
+        }
+    
+        // Clear the calculator
+        function clearDisplay() {
+            currentInput = '0';
+            previousInput = '';
+            operator = null;
+            updateDisplay();
+        }
+    
+        // Toggle light/dark theme
+        function toggleTheme() {
+            const body = document.body;
+            if (body.classList.contains('light')) {
+                body.classList.remove('light');
+                body.classList.add('dark');
+            } else {
+                body.classList.remove('dark');
+                body.classList.add('light');
+            }
+        }
+    
+        // Handle keyboard input using onkeydown attribute in HTML (example below)
+        function handleKey(event) {
+            const key = event.key;
+            if (key >= '0' && key <= '9') {
+                inputNumber(key);
+            } else if (key === '.') {
+                inputDecimal();
+            } else if (key === '+' || key === '-' || key === '*' || key === '/') {
+                inputOperator(key);
+            } else if (key === 'Enter' || key === '=') {
+                calculate();
+            } else if (key === 'Escape') {
+                clearDisplay();
+            }
+        }
+    
+        // Initialize the calculator
+        updateDisplay();
+    </script>
+    
+    
+</body>
+</html>
